@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 2754502732046939048}
   - component: {fileID: 1255665046319585411}
   m_Layer: 0
-  m_Name: switchPrefab
+  m_Name: switch_Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,7 +793,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7445800203401367647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -802,8 +802,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -2.8, y: -3.74}
+  m_SizeDelta: {x: 27.38, y: 54.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5601834876861055268
 CanvasRenderer:

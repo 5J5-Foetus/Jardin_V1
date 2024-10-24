@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3773154799702333873}
   m_Layer: 0
-  m_Name: switch
+  m_Name: switch_OG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
