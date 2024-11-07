@@ -8,7 +8,12 @@ public class changeSkybox : MonoBehaviour
     public Material matJour; // Materiel pour le jour
     public GameObject Switch;
 
+    public AudioSource audi;
+    public AudioClip sonJour;
+    public AudioClip sonNuit;
+
     bool interagit = false; // Booleen pour controler le jour et la nuit
+
 
 
     /* Fonction pour controller le skybox */
@@ -25,6 +30,10 @@ public class changeSkybox : MonoBehaviour
                 interagit = true;
                 // On fait jouer l'animation
                 Switch.GetComponent<Animator>().SetBool("active", true);
+                //
+                audi.GetComponent<AudioSource>().clip = sonNuit;
+                audi.GetComponent<AudioSource>().Play();
+
                 break;
                 // Fin du bloc
 
@@ -36,6 +45,9 @@ public class changeSkybox : MonoBehaviour
                 interagit = false;
                 //
                 Switch.GetComponent<Animator>().SetBool("active", false);
+                //
+                audi.GetComponent<AudioSource>().clip = sonJour;
+                audi.GetComponent<AudioSource>().Play();
                 break;
                 // Fin du bloc
         }
