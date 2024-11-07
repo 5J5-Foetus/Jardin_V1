@@ -27,6 +27,7 @@ public class changeSkybox : MonoBehaviour
             case false:
                 // On change le skybox pour la nuit
                 RenderSettings.skybox = matNuit;
+                DynamicGI.UpdateEnvironment();
                 // Le bool passe a true
                 interagit = true;
                 // On fait jouer l'animation
@@ -43,6 +44,7 @@ public class changeSkybox : MonoBehaviour
             case true:
                 // Le skybox passe au jour
                 RenderSettings.skybox = matJour;
+                DynamicGI.UpdateEnvironment();
                 // Le bool passe a false
                 interagit = false;
                 //
