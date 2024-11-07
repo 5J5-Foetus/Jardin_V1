@@ -8,9 +8,10 @@ public class changeSkybox : MonoBehaviour
     public Material matJour; // Materiel pour le jour
     public GameObject Switch;
 
-    public AudioSource audi;
+    public AudioSource musique;
     public AudioClip sonJour;
     public AudioClip sonNuit;
+    public AudioSource criquets;
 
     bool interagit = false; // Booleen pour controler le jour et la nuit
 
@@ -30,10 +31,11 @@ public class changeSkybox : MonoBehaviour
                 interagit = true;
                 // On fait jouer l'animation
                 Switch.GetComponent<Animator>().SetBool("active", true);
-                //
-                audi.GetComponent<AudioSource>().clip = sonNuit;
-                audi.GetComponent<AudioSource>().Play();
-
+                // On change la musique pour la version de jour
+                musique.GetComponent<AudioSource>().clip = sonNuit;
+                musique.GetComponent<AudioSource>().Play();
+                // On active le son des criquets
+                criquets.GetComponent<AudioSource>().enabled = true;
                 break;
                 // Fin du bloc
 
@@ -45,9 +47,11 @@ public class changeSkybox : MonoBehaviour
                 interagit = false;
                 //
                 Switch.GetComponent<Animator>().SetBool("active", false);
-                //
-                audi.GetComponent<AudioSource>().clip = sonJour;
-                audi.GetComponent<AudioSource>().Play();
+                // On change la musique pour la version de nuit
+                musique.GetComponent<AudioSource>().clip = sonJour;
+                musique.GetComponent<AudioSource>().Play();
+                // On desactive le son des criquets
+                criquets.GetComponent<AudioSource>().enabled = false;
                 break;
                 // Fin du bloc
         }
