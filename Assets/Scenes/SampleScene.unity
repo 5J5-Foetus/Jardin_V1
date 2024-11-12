@@ -1998,7 +1998,7 @@ PrefabInstance:
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: musique
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1967570752}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: sonJour
       value: 
@@ -2010,7 +2010,11 @@ PrefabInstance:
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: criquets
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 930846710}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: environnement
+      value: 
+      objectReference: {fileID: 705507994}
     - target: {fileID: 5605319256378539484, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: m_Name
       value: switch_Click
