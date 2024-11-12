@@ -1150,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1494434465694301819, guid: e6339773220714ea58e2a9f5080f4dd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2498064
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 1494434465694301819, guid: e6339773220714ea58e2a9f5080f4dd8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2948,6 +2948,10 @@ PrefabInstance:
       propertyPath: lucioles
       value: 
       objectReference: {fileID: 129219289}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: environnement
+      value: 
+      objectReference: {fileID: 705507994}
     - target: {fileID: 5605319256378539484, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: m_Name
       value: switch_Click
