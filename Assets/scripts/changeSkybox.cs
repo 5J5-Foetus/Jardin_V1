@@ -6,6 +6,7 @@ public class changeSkybox : MonoBehaviour
 {
     /*-------------- Les Objets --------------*/
     public GameObject Switch; // L'objet switch
+    public GameObject lucioles; // Les lucioles
 
     /*-------------- Les Matériaux --------------*/
     public Material matNuit; // Materiel pour la nuit
@@ -75,6 +76,8 @@ public class changeSkybox : MonoBehaviour
                 criquets.GetComponent<AudioSource>().enabled = true;
                 // Changement de la lumiÈre pour la nuit
                 environnement.color = darkColor;
+                // Activation des lucioles
+                lucioles.SetActive(true);
                 break;
                 // Fin du bloc
 
@@ -94,6 +97,8 @@ public class changeSkybox : MonoBehaviour
                 criquets.GetComponent<AudioSource>().enabled = false;
                 // Changement de la couleur de la lumière pour le jour
                 environnement.color = lightColor;
+                // Désactivation des lucioles
+                lucioles.SetActive(false);
                 break;
                 // Fin du bloc
         }
