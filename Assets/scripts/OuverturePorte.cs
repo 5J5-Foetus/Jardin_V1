@@ -14,18 +14,18 @@ public class OuverturePorte : MonoBehaviour
         porteAnimator = porte.GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject == triggerPorte)
+        if(collision.gameObject.tag == "Player")
         {
             Debug.Log("Trigger Entré : Ouverture de la porte");
             porteAnimator.SetBool("Ouvert", true);
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+   public  void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject == triggerPorte)
+        if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Trigger Sorti : Fermeture de la porte");
             porteAnimator.SetBool("Ouvert", false);
