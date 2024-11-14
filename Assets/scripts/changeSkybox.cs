@@ -14,13 +14,15 @@ public class changeSkybox : MonoBehaviour
 
     /*-------------- Lumières --------------*/
     public Light environnement; // La lumière
-    private string HexColor1 = "#FFF4D6";
-    private string HexColor2 = "#327CFF";
-    private Color lightColor;
-    private Color darkColor;
+    private string HexColor1 = "#FFF4D6"; // Couleur de la lumière le jour
+    private string HexColor2 = "#327CFF"; // Couleur de la lumière la nuit
+    private Color lightColor; // Le jour
+    private Color darkColor; // La nuit
 
     /*-------------- Les musiques et sons --------------*/
+    // L'AudioSource
     public AudioSource musique;
+    // Les Clips
     public AudioClip sonJour;
     public AudioClip sonNuit;
     public AudioSource criquets;
@@ -36,7 +38,7 @@ public class changeSkybox : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("La nuit a commencé:" + weepingAngel.Nuit);
+        Debug.Log("La nuit a commencé:" + weepingAngel.Nuit); // Pour voir le changement de la bool contrôllé par le script "weepingAngel"
     }
 
     /* ======================================================

@@ -25,6 +25,13 @@ public class weepingAngel : MonoBehaviour
     /*----- Bool -----*/
     public static bool Nuit = false;
 
+    /**
+     * 
+     * Dans l'update on regarde à quel moment de la journée on est:
+     *      1- Si on est le jour, la statue va se touner vers le joueur si il ne la regarde pas sinon elle ne bouge pas.
+     *      2- Si on est la nuit, la statue avance vers le joueur si il ne la regarde pas et, sinon, elle ne bouge pas non plus.
+     *      
+     */
     private void Update()
     {
         // Calcul de la région visible par la caméra dans l'environnement 3D (Frustrum) 
@@ -35,28 +42,29 @@ public class weepingAngel : MonoBehaviour
         {
             // La vitesse de la statue est mise à 0 et elle garde sa position actuelle
             statueAI.speed = 0f;
+            // La statue ne peut pas tourner sur elle-même
             statueAI.updateRotation = false;
-            //statueAI.SetDestination(transform.position);
         }
         // Si la statue n'est pas en vue ET qu'on est le jour...
         else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
         {
             // La vitesse de la statue change au nombre entré dans l'inspecteur
                statueAI.speed = statue_Vitesse;
-            // La variable destination de la statue devient la position du joueur
-            //   destination = joueur_Transform.position;
-            // On associe la destination du NavMesh à la variable
-            //   statueAI.destination = destination;
-            //
+            // La statue peut tourner et on lance la fonction qui fait se tourner la statue
             statueAI.updateRotation = true;
             RotationJoueur();
         }
+        // Si la statue est dans le frustrum de la caméra ET qu'on est la nuit...
         else if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
         {
+            // La vitesse de la statue passe à 0
             statueAI.speed = 0f;
+            // La rotation de la statue n'est plus possible
             statueAI.updateRotation = false;
+            // La destination de la statue est changée pour sa propre position donc elle ne bougera pas
             statueAI.SetDestination(transform.position);
         }
+        // Si la statue n'est pas en vue ET qu'on est la nuit...
         else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
         {
             // La vitesse de la statue change au nombre entré dans l'inspecteur
@@ -65,7 +73,7 @@ public class weepingAngel : MonoBehaviour
                destination = joueur_Transform.position;
             // On associe la destination du NavMesh à la variable
                statueAI.destination = destination;
-            //
+            // La statue peut se tourner et on lance la fonction qui permet la rotation
                 statueAI.updateRotation = true;
                 RotationJoueur();
         }
