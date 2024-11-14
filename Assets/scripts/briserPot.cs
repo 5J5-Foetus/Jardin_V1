@@ -15,7 +15,6 @@ public class briserPot : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>(); // Le rigidbody
 
-        plancher = GameObject.Find("FLOOR_EffectMesh"); // Le sol
         plancher.layer = 3; // On donne le bon layer au placnher
     }
 
@@ -28,6 +27,8 @@ public class briserPot : MonoBehaviour
             // Le pot se brise par activation de l'asset et desactivation de la version par defaut
             potBrise.SetActive(true);
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+            Debug.Log("Pot brisé!");
         }
     }
 }
