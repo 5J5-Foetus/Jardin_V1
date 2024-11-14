@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 1645746735999798391}
   - component: {fileID: 8757021524885949105}
   - component: {fileID: 3101926159243953589}
-  - component: {fileID: 6423407372944019351}
+  - component: {fileID: 9044676672394424505}
   m_Layer: 0
   m_Name: GreekStatue_LOD0
   m_TagString: Untagged
@@ -228,8 +228,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6423407372944019351
-MeshCollider:
+--- !u!65 &9044676672394424505
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -246,7 +246,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -376342179967582156, guid: e728ae35feab2834fa1f7a8599fe9678, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.1959483, y: 0.6617121, z: 0.1999803}
+  m_Center: {x: 0.00024284795, y: 0.00034093857, z: 0.000008150935}
