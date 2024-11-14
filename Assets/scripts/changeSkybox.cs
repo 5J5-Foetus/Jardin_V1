@@ -34,6 +34,11 @@ public class changeSkybox : MonoBehaviour
         darkColor = HexToColor(HexColor2); // Couleur de la lumière la nuit
     }
 
+    private void Update()
+    {
+        Debug.Log("La nuit a commencé:" + weepingAngel.Nuit);
+    }
+
     /* ======================================================
      * Fontion pour le passage de Hex à RGB pour la couleur *
      =======================================================*/
@@ -75,6 +80,8 @@ public class changeSkybox : MonoBehaviour
                 criquets.GetComponent<AudioSource>().enabled = true;
                 // Changement de la lumiÈre pour la nuit
                 environnement.color = darkColor;
+                // On passe à la nuit dans le script des statues
+                weepingAngel.Nuit = true;
                 break;
                 // Fin du bloc
 
@@ -94,6 +101,8 @@ public class changeSkybox : MonoBehaviour
                 criquets.GetComponent<AudioSource>().enabled = false;
                 // Changement de la couleur de la lumière pour le jour
                 environnement.color = lightColor;
+                // On passe au jour dans le script des statues
+                weepingAngel.Nuit = false;
                 break;
                 // Fin du bloc
         }
