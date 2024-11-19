@@ -4,23 +4,42 @@ using UnityEngine;
 
 public class changeSkybox : MonoBehaviour
 {
+    /**
+     * -----------------------------------------------------------------------------------------------------------------------------------------
+     * Ce script controle l'ambiance generale de la scene dependemment de l'interaction du joueur avec la switch dans la scene. Pour ce faire il: 
+     * -----------------------------------------------------------------------------------------------------------------------------------------
+     *      1- Transforme les valeur hexadecimales des couleurs pour les lumieres et particules en RGBA. 
+     *      2- Change le skybox pour passer du jour a la nuit et vice-versa.
+     *      3- Change la musique et les sons ambiants.
+     *      4- Change la couleur des lumieres (systeme de particules compris).
+     *      5- Active le booleen qui controle le comportement des statues a partir du script "weepingAngel".
+     * -----------------------------------------------------------------------------------------------------------------------------------------
+     */
     /*-------------- Les Objets --------------*/
     public GameObject Switch; // L'objet switch
 
     /*-------------- Les Matériaux --------------*/
-    public Material matNuit; // Materiel pour la nuit
-    public Material matJour; // Materiel pour le jour
-    
+    public Material matNuit; // Materiel skybox pour la nuit
+    public Material matJour; // Materiel skybox pour le jour
 
     /*-------------- Lumières --------------*/
     public Light environnement; // La lumière
-    private string HexColor1 = "#FFF4D6";
-    private string HexColor2 = "#327CFF";
-    private Color lightColor;
-    private Color darkColor;
+    private string HexColor1 = "#FFF4D6"; // Couleur de la lumière le jour
+    private string HexColor2 = "#327CFF"; // Couleur de la lumière la nuit
+    private Color lightColor; // Couleur RGBA le jour
+    private Color darkColor; // Couleur RGBA la nuit
+
+    public ParticleSystem Godrays; // Le systeme de particules "Godrays"
+    public ParticleSystem GodraysScene; // Le systeme de particule plus gros sur la scene
+    private string HexGodrays1 = "#FFE9AC"; // Couleur 1 pour les godsrays
+    private string HexGodrays2 = "#328AFF"; // Couleur 2 pour les godrays
+    private Color GodraysNuit; // Couleur RGBA des godrays la nuit
+    private Color GodraysJour; // Couleur RGBA des godrays le jour
 
     /*-------------- Les musiques et sons --------------*/
+    // L'AudioSource
     public AudioSource musique;
+    // Les Clips
     public AudioClip sonJour;
     public AudioClip sonNuit;
     public AudioSource criquets;
@@ -30,8 +49,16 @@ public class changeSkybox : MonoBehaviour
 
     private void Start()
     {
+        // Transformation des valeurs hexadecimales des couleurs en RGBA
         lightColor = HexToColor(HexColor1); // Couleur de la lumière du jour
         darkColor = HexToColor(HexColor2); // Couleur de la lumière la nuit
+        GodraysJour = HexToColor(HexGodrays1); // Couleur des Godrays le jour
+        GodraysNuit = HexToColor(HexGodrays2); // Couleur des Godrays la nuit
+    }
+
+    private void Update()
+    {
+        Debug.Log("La nuit a commencé:" + weepingAngel.Nuit); // Pour voir le changement de la bool contrôllé par le script "weepingAngel"
     }
 
     /* ======================================================
@@ -56,6 +83,10 @@ public class changeSkybox : MonoBehaviour
      =====================================*/
     public void changerSky() 
     {
+        // Acces au main du systeme de particules dans une variable 
+        var particulesGod = Godrays.main;
+        var particulesScene = GodraysScene.main;
+
         // Regarde le booleen pour activer/ desactiver la light switch
         switch (interagit)
         {
@@ -75,6 +106,11 @@ public class changeSkybox : MonoBehaviour
                 criquets.GetComponent<AudioSource>().enabled = true;
                 // Changement de la lumiÈre pour la nuit
                 environnement.color = darkColor;
+                // Les particules passent a leur couleur de nuit
+                particulesGod.startColor = GodraysNuit;
+                particulesScene.startColor = GodraysNuit;
+                // On passe à la nuit dans le script des statues
+                weepingAngel.Nuit = true;
                 break;
                 // Fin du bloc
 
@@ -94,6 +130,11 @@ public class changeSkybox : MonoBehaviour
                 criquets.GetComponent<AudioSource>().enabled = false;
                 // Changement de la couleur de la lumière pour le jour
                 environnement.color = lightColor;
+                // Les particules passent a leur couleur de jour
+                particulesGod.startColor = GodraysJour;
+                particulesScene.startColor = GodraysJour;
+                // On passe au jour dans le script des statues
+                weepingAngel.Nuit = false;
                 break;
                 // Fin du bloc
         }
