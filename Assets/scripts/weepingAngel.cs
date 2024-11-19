@@ -5,9 +5,15 @@ using UnityEngine.AI;
 
 public class weepingAngel : MonoBehaviour
 {
-    /*============
-     * VARIABLES *
-     ============*/
+    /**
+     * ---------------------------------------------------------------------------------------------------------------
+     * Le script controle le comportement des statues dans la scene en: 
+     * ----------------------------------------------------------------------------------------------------------------
+     *      1- Calculant le frustrum de la camera pour determiner si le joueur regarde la statue ou non.
+     *      2- Si on est le jour, la statue se tourne vers le joueur et le regarde lorsqu'il ne la regarde pas.
+     *      3- Si on est la nuit, la statue se tourne et se dirige lentement vers le joueur lorsqu'il ne la regarde pas.
+     * ------------------------------------------------------------------------------------------------------------------
+     */
     /*----- Game Objects ------*/
     public NavMeshAgent statueAI; // La statue
 
@@ -15,7 +21,7 @@ public class weepingAngel : MonoBehaviour
     public Transform joueur_Transform; // Le transform du joueur
     Vector3 destination; // destination
 
-    /*----- Caméra -----*/
+    /*----- Camera -----*/
     public Camera CamJoueur; // La camera (du joueur)
 
     /*----- Vitesses -----*/
@@ -25,19 +31,12 @@ public class weepingAngel : MonoBehaviour
     /*----- Bool -----*/
     public static bool Nuit = false;
 
-    /**
-     * 
-     * Dans l'update on regarde à quel moment de la journée on est:
-     *      1- Si on est le jour, la statue va se touner vers le joueur si il ne la regarde pas sinon elle ne bouge pas.
-     *      2- Si on est la nuit, la statue avance vers le joueur si il ne la regarde pas et, sinon, elle ne bouge pas non plus.
-     *      
-     */
     private void Update()
     {
-        // Calcul de la région visible par la caméra dans l'environnement 3D (Frustrum) 
+        // Calcul de la region visible par la caméra dans l'environnement 3D (Frustrum) 
         Plane[] plane = GeometryUtility.CalculateFrustumPlanes(CamJoueur);
 
-        // Si la statue est dans le frustrum de la caméra ET qu'on est le jour...
+        // Si la statue est dans le frustrum de la camera ET qu'on est le jour...
         if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
         {
             // La vitesse de la statue est mise à 0 et elle garde sa position actuelle
@@ -54,7 +53,7 @@ public class weepingAngel : MonoBehaviour
             statueAI.updateRotation = true;
             RotationJoueur();
         }
-        // Si la statue est dans le frustrum de la caméra ET qu'on est la nuit...
+        // Si la statue est dans le frustrum de la camera ET qu'on est la nuit...
         else if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
         {
             // La vitesse de la statue passe à 0
@@ -67,7 +66,7 @@ public class weepingAngel : MonoBehaviour
         // Si la statue n'est pas en vue ET qu'on est la nuit...
         else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
         {
-            // La vitesse de la statue change au nombre entré dans l'inspecteur
+            // La vitesse de la statue change au nombre entre dans l'inspecteur
                 statueAI.speed = statue_Vitesse;
             // La variable destination de la statue devient la position du joueur
                destination = joueur_Transform.position;
