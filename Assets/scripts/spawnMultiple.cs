@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class FindSpawnPositions : MonoBehaviour
 {
+    /**
+     * 
+     * CECI EST UN SCRIPT PROTOTYPE DE SPAWN POUR MULTIPLES OBJETS DANS UNE SCENE VR. 
+     * INCOMPLET ET BUGGE, NE PAS UTILISER
+     * 
+     */
     public MRUK.RoomFilter SpawnOnStart = MRUK.RoomFilter.CurrentRoomOnly;
     public GameObject[] SpawnObjects; // Array for multiple prefabs
     public MRUKAnchor.SceneLabels Labels = ~(MRUKAnchor.SceneLabels)0; // Label filter for mapped objects
