@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class changeSkybox : MonoBehaviour
 {
+    /**
+     * -----------------------------------------------------------------------------------------------------------------------------------------
+     * Ce script controle l'ambiance generale de la scene dependemment de l'interaction du joueur avec la switch dans la scene. Pour ce faire il: 
+     * -----------------------------------------------------------------------------------------------------------------------------------------
+     *      1- Transforme les valeur hexadecimales des couleurs pour les lumieres et particules en RGBA. 
+     *      2- Change le skybox pour passer du jour a la nuit et vice-versa.
+     *      3- Change la musique et les sons ambiants.
+     *      4- Change la couleur des lumieres (systeme de particules compris).
+     *      5- Active le booleen qui controle le comportement des statues a partir du script "weepingAngel".
+     * -----------------------------------------------------------------------------------------------------------------------------------------
+     */
     /*-------------- Les Objets --------------*/
     public GameObject Switch; // L'objet switch
 
     /*-------------- Les Matériaux --------------*/
-    public Material matNuit; // Materiel pour la nuit
-    public Material matJour; // Materiel pour le jour
+    public Material matNuit; // Materiel skybox pour la nuit
+    public Material matJour; // Materiel skybox pour le jour
 
     /*-------------- Lumières --------------*/
     public Light environnement; // La lumière
@@ -34,7 +45,7 @@ public class changeSkybox : MonoBehaviour
     public AudioSource criquets;
 
     /*-------------- Variables supplémentaires --------------*/
-    public bool interagit = false; // Booleen pour controler le jour et la nuit
+    bool interagit = false; // Booleen pour controler le jour et la nuit
 
     private void Start()
     {
