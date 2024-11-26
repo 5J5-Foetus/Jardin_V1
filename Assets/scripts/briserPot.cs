@@ -33,7 +33,7 @@ public class briserPot : MonoBehaviour
     private void OnCollisionEnter(Collision infoCollision)
     {   
         // Detection de la velocité et de la collision avec le layer du sol ("Environnement")
-        if (this.rb.velocity.magnitude > 1 && infoCollision.gameObject.layer == 3)
+        if (this.rb.velocity.magnitude > 0.5 && infoCollision.gameObject.layer == 3)
         {
             // Le pot se brise par activation de l'asset et desactivation de la version par defaut
             potBrise.SetActive(true);

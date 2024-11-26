@@ -29,12 +29,12 @@ public class changeSkybox : MonoBehaviour
     private Color lightColor; // Couleur RGBA le jour
     private Color darkColor; // Couleur RGBA la nuit
 
-    public ParticleSystem Godrays; // Le systeme de particules "Godrays"
-    public ParticleSystem GodraysScene; // Le systeme de particule plus gros sur la scene
-    private string HexGodrays1 = "#FFE9AC"; // Couleur 1 pour les godsrays
-    private string HexGodrays2 = "#328AFF"; // Couleur 2 pour les godrays
-    private Color GodraysNuit; // Couleur RGBA des godrays la nuit
-    private Color GodraysJour; // Couleur RGBA des godrays le jour
+   // public ParticleSystem Godrays; // Le systeme de particules "Godrays"
+   // public ParticleSystem GodraysScene; // Le systeme de particule plus gros sur la scene
+    //private string HexGodrays1 = "#FFE9AC"; // Couleur 1 pour les godsrays
+    //private string HexGodrays2 = "#328AFF"; // Couleur 2 pour les godrays
+   // private Color GodraysNuit; // Couleur RGBA des godrays la nuit
+   // private Color GodraysJour; // Couleur RGBA des godrays le jour
 
     /*-------------- Les musiques et sons --------------*/
     // L'AudioSource
@@ -52,8 +52,8 @@ public class changeSkybox : MonoBehaviour
         // Transformation des valeurs hexadecimales des couleurs en RGBA
         lightColor = HexToColor(HexColor1); // Couleur de la lumière du jour
         darkColor = HexToColor(HexColor2); // Couleur de la lumière la nuit
-        GodraysJour = HexToColor(HexGodrays1); // Couleur des Godrays le jour
-        GodraysNuit = HexToColor(HexGodrays2); // Couleur des Godrays la nuit
+     //   GodraysJour = HexToColor(HexGodrays1); // Couleur des Godrays le jour
+      //  GodraysNuit = HexToColor(HexGodrays2); // Couleur des Godrays la nuit
     }
 
     private void Update()
@@ -84,8 +84,8 @@ public class changeSkybox : MonoBehaviour
     public void changerSky() 
     {
         // Acces au main du systeme de particules dans une variable 
-        var particulesGod = Godrays.main;
-        var particulesScene = GodraysScene.main;
+        //var particulesGod = Godrays.main;
+        //var particulesScene = GodraysScene.main;
 
         // Regarde le booleen pour activer/ desactiver la light switch
         switch (interagit)
@@ -107,8 +107,8 @@ public class changeSkybox : MonoBehaviour
                 // Changement de la lumiÈre pour la nuit
                 environnement.color = darkColor;
                 // Les particules passent a leur couleur de nuit
-                particulesGod.startColor = GodraysNuit;
-                particulesScene.startColor = GodraysNuit;
+          //      particulesGod.startColor = GodraysNuit;
+           //     particulesScene.startColor = GodraysNuit;
                 // On passe à la nuit dans le script des statues
                 weepingAngel.Nuit = true;
                 break;
@@ -131,8 +131,8 @@ public class changeSkybox : MonoBehaviour
                 // Changement de la couleur de la lumière pour le jour
                 environnement.color = lightColor;
                 // Les particules passent a leur couleur de jour
-                particulesGod.startColor = GodraysJour;
-                particulesScene.startColor = GodraysJour;
+          //      particulesGod.startColor = GodraysJour;
+          //      particulesScene.startColor = GodraysJour;
                 // On passe au jour dans le script des statues
                 weepingAngel.Nuit = false;
                 break;
