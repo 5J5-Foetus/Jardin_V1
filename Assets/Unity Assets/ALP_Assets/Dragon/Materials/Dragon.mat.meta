@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dac47a9ef102a124b9a64b925cfcb815
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59053
+  packageName: Dragon
+  packageVersion: 1.0
+  assetPath: Assets/Dragon/Materials/Dragon.mat
+  uploadId: 109247
