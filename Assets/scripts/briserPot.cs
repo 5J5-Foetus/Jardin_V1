@@ -24,6 +24,7 @@ public class briserPot : MonoBehaviour
     /*----- Composants -----*/
     Rigidbody rb; // Le Rigidbody du pot
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); // Le rigidbody

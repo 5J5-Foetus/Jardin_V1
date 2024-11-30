@@ -41,6 +41,7 @@ public class changeSkybox : MonoBehaviour
     /*-------------- Les musiques et sons --------------*/
     // L'AudioSource
     public AudioSource musique;
+    public AudioSource sonSwitch;
     // Les Clips
     public AudioClip sonJour;
     public AudioClip sonNuit;
@@ -118,6 +119,8 @@ public class changeSkybox : MonoBehaviour
                 //     particulesScene.startColor = GodraysNuit;
                 // On passe à la nuit dans le script des statues
                 weepingAngel.Nuit = true;
+                // On fait jouer le son de la switch
+                sonSwitch.Play();
                 break;
                 // Fin du bloc
 
@@ -142,6 +145,8 @@ public class changeSkybox : MonoBehaviour
           //      particulesScene.startColor = GodraysJour;
                 // On passe au jour dans le script des statues
                 weepingAngel.Nuit = false;
+                // On fait jouer le son de la switch
+                sonSwitch.Play();
                 break;
                 // Fin du bloc
         }

@@ -3,7 +3,22 @@ guid: 48a3cc6bae7cdc94dbc41d3f7f8a1ab5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AnatomyHandHumanMale2_standardSurface2
+    second: {fileID: 2100000, guid: d2a20c21956107b4492a3c90e9a286ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AnatomyHandHumanMale_standardSurface2
+    second: {fileID: 2100000, guid: 13802eec8f1190f4aa5789212a01c144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 9f63deefcbbd69945bac9d9267e53c1e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
