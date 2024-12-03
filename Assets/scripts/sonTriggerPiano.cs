@@ -14,4 +14,12 @@ public class sonTriggerPiano : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(sonPiano);
         }
     }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject == TriggerPiano)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
