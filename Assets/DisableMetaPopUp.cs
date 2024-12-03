@@ -10,6 +10,6 @@ public class DisableMetaPopUp : MonoBehaviour
     [ContextMenu("DisablePopup")]
     public void DisablePopup()
     {
-        EditorPrefs.SetBool(TelemetryEnabledKey, false);
+        //EditorPrefs.SetBool(TelemetryEnabledKey, false);
     }
 }

@@ -23,22 +23,20 @@ public class changeSkybox : MonoBehaviour
     public Material matJour; // Materiel skybox pour le jour
 
     /*-------------- Lumières --------------*/
-    public Light environnement; // La lumière
-    private string HexColor1 = "#FFF4D6"; // Couleur de la lumière le jour
-    private string HexColor2 = "#327CFF"; // Couleur de la lumière la nuit
-    private Color lightColor; // Couleur RGBA le jour
-    private Color darkColor; // Couleur RGBA la nuit
+    public GameObject jour;
+    public GameObject nuit;
 
-   // public ParticleSystem Godrays; // Le systeme de particules "Godrays"
-   // public ParticleSystem GodraysScene; // Le systeme de particule plus gros sur la scene
-    //private string HexGodrays1 = "#FFE9AC"; // Couleur 1 pour les godsrays
-    //private string HexGodrays2 = "#328AFF"; // Couleur 2 pour les godrays
-   // private Color GodraysNuit; // Couleur RGBA des godrays la nuit
-   // private Color GodraysJour; // Couleur RGBA des godrays le jour
+    /*-------------- Particules --------------*/
+    public GameObject GodraysJour; // Le systeme de particules "Godrays" pour le jour
+    public GameObject GodraysNuit; // Le systeme de particules "Godrays" pour la nuit
+
+    public GameObject serre_jour_gorays; // Le systeme de particules "Godrays" pour le jour 
+    public GameObject serre_nuit_gorays; // Le systeme de particules "Godrays" pour la nuit
 
     /*-------------- Les musiques et sons --------------*/
     // L'AudioSource
     public AudioSource musique;
+    public AudioSource sonSwitch;
     // Les Clips
     public AudioClip sonJour;
     public AudioClip sonNuit;
@@ -49,11 +47,8 @@ public class changeSkybox : MonoBehaviour
 
     private void Start()
     {
-        // Transformation des valeurs hexadecimales des couleurs en RGBA
-        lightColor = HexToColor(HexColor1); // Couleur de la lumière du jour
-        darkColor = HexToColor(HexColor2); // Couleur de la lumière la nuit
-     //   GodraysJour = HexToColor(HexGodrays1); // Couleur des Godrays le jour
-      //  GodraysNuit = HexToColor(HexGodrays2); // Couleur des Godrays la nuit
+        //Les particules du GodRays de nuit sont désactivés au départ du jeu puisque c'est le jour
+        GodraysNuit.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -61,40 +56,20 @@ public class changeSkybox : MonoBehaviour
         Debug.Log("La nuit a commencé:" + weepingAngel.Nuit); // Pour voir le changement de la bool contrôllé par le script "weepingAngel"
     }
 
-    /* ======================================================
-     * Fontion pour le passage de Hex à RGB pour la couleur *
-     =======================================================*/
-    Color HexToColor(string hex)
-    {
-        // Enlève le "#" si il y en a un
-        hex = hex.Replace("#", "");
-
-        // Parse la string Hex en RGB
-        float r = Mathf.Clamp01(int.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber) / 255f);
-        float g = Mathf.Clamp01(int.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber) / 255f);
-        float b = Mathf.Clamp01(int.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber) / 255f);
-
-        // Renvoie la couleur RGB
-        return new Color(r, g, b);
-    }
-
     /* ===================================
      * Fonction pour controller le skybox *
      =====================================*/
     public void changerSky() 
     {
-        // Acces au main du systeme de particules dans une variable 
-        //var particulesGod = Godrays.main;
-        //var particulesScene = GodraysScene.main;
-
         // Regarde le booleen pour activer/ desactiver la light switch
         switch (interagit)
         {
             // Si faux...
             case false:
+                // On passe à la nuit dans le script des statues
+                weepingAngel.Nuit = true;
                 // On change le skybox pour la NUIT
                 RenderSettings.skybox = matNuit;
-                DynamicGI.UpdateEnvironment();
                 // Le bool passe a true
                 interagit = true;
                 // On fait jouer l'animation
@@ -105,20 +80,24 @@ public class changeSkybox : MonoBehaviour
                 // On active le son des criquets
                 criquets.GetComponent<AudioSource>().enabled = true;
                 // Changement de la lumiÈre pour la nuit
-                environnement.color = darkColor;
+                nuit.SetActive(true);
+                jour.SetActive(false);
                 // Les particules passent a leur couleur de nuit
-          //      particulesGod.startColor = GodraysNuit;
-           //     particulesScene.startColor = GodraysNuit;
-                // On passe à la nuit dans le script des statues
-                weepingAngel.Nuit = true;
+                GodraysJour.gameObject.SetActive(false);
+                GodraysNuit.gameObject.SetActive(true);
+                serre_jour_gorays.gameObject.SetActive(false);
+                serre_nuit_gorays.gameObject.SetActive(true);
+                // On fait jouer le son de la switch
+                sonSwitch.Play();
                 break;
                 // Fin du bloc
 
             // Si vrai...
             case true:
+                // On passe au jour dans le script des statues
+                weepingAngel.Nuit = false;
                 // Le skybox passe au JOUR
                 RenderSettings.skybox = matJour;
-                DynamicGI.UpdateEnvironment();
                 // Le bool passe a false
                 interagit = false;
                 // On désactive le bool de l'animation de la switch
@@ -129,12 +108,15 @@ public class changeSkybox : MonoBehaviour
                 // On desactive le son des criquets
                 criquets.GetComponent<AudioSource>().enabled = false;
                 // Changement de la couleur de la lumière pour le jour
-                environnement.color = lightColor;
+                nuit.SetActive(false);
+                jour.SetActive(true);
                 // Les particules passent a leur couleur de jour
-          //      particulesGod.startColor = GodraysJour;
-          //      particulesScene.startColor = GodraysJour;
-                // On passe au jour dans le script des statues
-                weepingAngel.Nuit = false;
+                GodraysJour.gameObject.SetActive(true);
+                GodraysNuit.gameObject.SetActive(false);
+                serre_jour_gorays.gameObject.SetActive(true);
+                serre_nuit_gorays.gameObject.SetActive(false);
+                // On fait jouer le son de la switch
+                sonSwitch.Play();
                 break;
                 // Fin du bloc
         }
