@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4768485048284766129}
   - component: {fileID: 5789206260273484032}
   m_Layer: 0
-  m_Name: DoorV2
+  m_Name: Doortest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
