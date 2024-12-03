@@ -7,6 +7,7 @@ public class activationFoetus : MonoBehaviour
     /*----- Les GameObjects ------*/
     public GameObject pedestalFoetus;
     public GameObject particulesFoetus;
+    public GameObject foetus;
 
     /*----- Les composantes des GameObjects -----*/
     Animator animator;
@@ -29,11 +30,11 @@ public class activationFoetus : MonoBehaviour
             // Si c'est le JOUR...
             case false:
                 animator.SetBool("actif", false);
-                particulesFoetus.SetActive(false);
                 break;
 
             // Si c'est la NUIT...
             case true:
+                foetus.SetActive(true);
                 animator.SetBool("actif", true);
                 audioFoetus.PlayOneShot(sonActivation, 0.2f);
                 Invoke("ActivationParticules", 1f);

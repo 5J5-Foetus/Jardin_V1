@@ -52210,6 +52210,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: mainFoetus+Materiaux
       objectReference: {fileID: 0}
+    - target: {fileID: 938433042128749616, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131899264944528468, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7136997826475286354, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
       propertyPath: m_Range
       value: 1.46
@@ -52217,6 +52225,10 @@ PrefabInstance:
     - target: {fileID: 7136997826475286354, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
       propertyPath: m_Intensity
       value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417581239724514350, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52252,7 +52264,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21263146e6e634fc480b96801f971b24, type: 3}
   m_Resource: {fileID: 8300000, guid: 21263146e6e634fc480b96801f971b24, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -60741,6 +60753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pedestalFoetus: {fileID: 1305206304}
   particulesFoetus: {fileID: 1019524350}
+  foetus: {fileID: 1019524348}
   sonActivation: {fileID: 8300000, guid: b42b451ca1c1a5447845241ccd6b3468, type: 3}
 --- !u!95 &1305206310
 Animator:
