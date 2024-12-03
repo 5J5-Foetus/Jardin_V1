@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
+  m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -15267,11 +15267,11 @@ PrefabInstance:
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: jour
       value: 
-      objectReference: {fileID: 705507994}
+      objectReference: {fileID: 705507993}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: nuit
       value: 
-      objectReference: {fileID: 775181541}
+      objectReference: {fileID: 775181540}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: Godrays
       value: 
@@ -37709,7 +37709,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 90
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -40254,7 +40254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &775181541
 Light:
   m_ObjectHideFlags: 0
@@ -40262,7 +40262,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775181540}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.31618595, g: 0.31682986, b: 0.45911938, a: 1}
@@ -80134,7 +80134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681412491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe06ff45c22d3884a9a57e21e70f38fe, type: 3}
   m_Name: 
