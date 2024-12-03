@@ -23,20 +23,26 @@ public class changeSkybox : MonoBehaviour
     public Material matJour; // Materiel skybox pour le jour
 
     /*-------------- Lumières --------------*/
-    public Light environnement; // La lumière
-    private string HexColor1 = "#FFF4D6"; // Couleur de la lumière le jour
+    /*public Light environnement; // La lumière
+    private string HexColor1 = "#E8EDAB"; // Couleur de la lumière le jour
     private string HexColor2 = "#327CFF"; // Couleur de la lumière la nuit
     private Color lightColor; // Couleur RGBA le jour
-    private Color darkColor; // Couleur RGBA la nuit
+    private Color darkColor; // Couleur RGBA la nuit*/
+
+    public Light jour;
+    public Light nuit;
 
     /*-------------- Particules --------------*/
-    public ParticleSystem GodraysJour; // Le systeme de particules "Godrays" pour le jour
-    public ParticleSystem GodraysNuit; // Le systeme de particules "Godrays" pour la nuit
+    public GameObject GodraysJour; // Le systeme de particules "Godrays" pour le jour
+    public GameObject GodraysNuit; // Le systeme de particules "Godrays" pour la nuit
+
+    public GameObject serre_jour_gorays; // Le systeme de particules "Godrays" pour le jour 
+    public GameObject serre_nuit_gorays; // Le systeme de particules "Godrays" pour la nuit
 
     //private string HexGodrays1 = "#FFE9AC"; // Couleur 1 pour les godsrays
     //private string HexGodrays2 = "#328AFF"; // Couleur 2 pour les godrays
-   // private Color GodraysNuit; // Couleur RGBA des godrays la nuit
-   // private Color GodraysJour; // Couleur RGBA des godrays le jour
+    // private Color GodraysNuit; // Couleur RGBA des godrays la nuit
+    // private Color GodraysJour; // Couleur RGBA des godrays le jour
 
     /*-------------- Les musiques et sons --------------*/
     // L'AudioSource
@@ -53,8 +59,8 @@ public class changeSkybox : MonoBehaviour
     private void Start()
     {
         // Transformation des valeurs hexadecimales des couleurs en RGBA
-        lightColor = HexToColor(HexColor1); // Couleur de la lumière du jour
-        darkColor = HexToColor(HexColor2); // Couleur de la lumière la nuit
+    //    lightColor = HexToColor(HexColor1); // Couleur de la lumière du jour
+    //    darkColor = HexToColor(HexColor2); // Couleur de la lumière la nuit
                                            //   GodraysJour = HexToColor(HexGodrays1); // Couleur des Godrays le jour
                                            //  GodraysNuit = HexToColor(HexGodrays2); // Couleur des Godrays la nuit
 
@@ -70,7 +76,7 @@ public class changeSkybox : MonoBehaviour
     /* ======================================================
      * Fontion pour le passage de Hex à RGB pour la couleur *
      =======================================================*/
-    Color HexToColor(string hex)
+    /*Color HexToColor(string hex)
     {
         // Enlève le "#" si il y en a un
         hex = hex.Replace("#", "");
@@ -82,7 +88,7 @@ public class changeSkybox : MonoBehaviour
 
         // Renvoie la couleur RGB
         return new Color(r, g, b);
-    }
+    }*/
 
     /* ===================================
      * Fonction pour controller le skybox *
@@ -98,6 +104,8 @@ public class changeSkybox : MonoBehaviour
         {
             // Si faux...
             case false:
+                // On passe à la nuit dans le script des statues
+                weepingAngel.Nuit = true;
                 // On change le skybox pour la NUIT
                 RenderSettings.skybox = matNuit;
                 DynamicGI.UpdateEnvironment();
@@ -111,14 +119,17 @@ public class changeSkybox : MonoBehaviour
                 // On active le son des criquets
                 criquets.GetComponent<AudioSource>().enabled = true;
                 // Changement de la lumiÈre pour la nuit
-                environnement.color = darkColor;
+                nuit.enabled=true;
+                jour.enabled=false;
+                // environnement.color = darkColor;
                 // Les particules passent a leur couleur de nuit
                 GodraysJour.gameObject.SetActive(false);
                 GodraysNuit.gameObject.SetActive(true);
+
+                serre_jour_gorays.gameObject.SetActive(false);
+                serre_nuit_gorays.gameObject.SetActive(true);
                 //      particulesGod.startColor = GodraysNuit;
                 //     particulesScene.startColor = GodraysNuit;
-                // On passe à la nuit dans le script des statues
-                weepingAngel.Nuit = true;
                 // On fait jouer le son de la switch
                 sonSwitch.Play();
                 break;
@@ -126,6 +137,8 @@ public class changeSkybox : MonoBehaviour
 
             // Si vrai...
             case true:
+                // On passe au jour dans le script des statues
+                weepingAngel.Nuit = false;
                 // Le skybox passe au JOUR
                 RenderSettings.skybox = matJour;
                 DynamicGI.UpdateEnvironment();
@@ -139,12 +152,17 @@ public class changeSkybox : MonoBehaviour
                 // On desactive le son des criquets
                 criquets.GetComponent<AudioSource>().enabled = false;
                 // Changement de la couleur de la lumière pour le jour
-                environnement.color = lightColor;
+                nuit.enabled=false;
+                jour.enabled=true;
+                // environnement.color = lightColor;
                 // Les particules passent a leur couleur de jour
-          //      particulesGod.startColor = GodraysJour;
-          //      particulesScene.startColor = GodraysJour;
-                // On passe au jour dans le script des statues
-                weepingAngel.Nuit = false;
+                GodraysJour.gameObject.SetActive(true);
+                GodraysNuit.gameObject.SetActive(false);
+
+                serre_jour_gorays.gameObject.SetActive(true);
+                serre_nuit_gorays.gameObject.SetActive(false);
+                //      particulesGod.startColor = GodraysJour;
+                //      particulesScene.startColor = GodraysJour;
                 // On fait jouer le son de la switch
                 sonSwitch.Play();
                 break;

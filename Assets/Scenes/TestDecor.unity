@@ -9851,7 +9851,6 @@ GameObject:
   - component: {fileID: 216954759}
   - component: {fileID: 216954758}
   - component: {fileID: 216954757}
-  - component: {fileID: 216954756}
   m_Layer: 0
   m_Name: Nuit_GodRays
   m_TagString: Untagged
@@ -9859,29 +9858,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &216954756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216954755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef3c1d80420dc743931791b9f608319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Switch: {fileID: 0}
-  matNuit: {fileID: 0}
-  matJour: {fileID: 0}
-  environnement: {fileID: 0}
-  GodraysJour: {fileID: 1495977704}
-  GodraysNuit: {fileID: 216954758}
-  musique: {fileID: 0}
-  sonSwitch: {fileID: 0}
-  sonJour: {fileID: 0}
-  sonNuit: {fileID: 0}
-  criquets: {fileID: 0}
 --- !u!199 &216954757
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -10148,7 +10124,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.94654083, g: 1, b: 0.98908997, a: 1}
+      maxColor: {r: 0.5803922, g: 0.70980394, b: 0.75686276, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -15289,6 +15265,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 451896769}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: jour
+      value: 
+      objectReference: {fileID: 705507994}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: nuit
+      value: 
+      objectReference: {fileID: 775181541}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: Godrays
       value: 
       objectReference: {fileID: 536900267}
@@ -15317,6 +15301,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1168598733}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: GodraysJour
+      value: 
+      objectReference: {fileID: 1495977701}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: GodraysNuit
+      value: 
+      objectReference: {fileID: 216954755}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: GodraysScene
       value: 
       objectReference: {fileID: 628678951}
@@ -15324,6 +15316,14 @@ PrefabInstance:
       propertyPath: environnement
       value: 
       objectReference: {fileID: 705507994}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: serre_jour_gorays
+      value: 
+      objectReference: {fileID: 1360692131}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: serre_nuit_gorays
+      value: 
+      objectReference: {fileID: 2091075731}
     - target: {fileID: 3011147716678786858, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: m_ActiveFontFeatures.Array.size
       value: 0
@@ -17362,7 +17362,6 @@ GameObject:
   - component: {fileID: 309555596}
   - component: {fileID: 309555599}
   - component: {fileID: 309555598}
-  - component: {fileID: 309555597}
   m_Layer: 0
   m_Name: Gazonhaut (99)
   m_TagString: Untagged
@@ -17385,28 +17384,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 578462868}
   m_LocalEulerAnglesHint: {x: 85.204, y: 0, z: -141.814}
---- !u!64 &309555597
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309555595}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &309555598
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21386,6 +21363,7 @@ Transform:
   - {fileID: 657576767}
   - {fileID: 1787438088}
   - {fileID: 1734568517}
+  - {fileID: 2107034679}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &451649127
@@ -37665,7 +37643,7 @@ GameObject:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: lumiere_jour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38061,7 +38039,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 445740816}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 01aac5c4e206bf644bf54ca2410d703f, type: 3}
       propertyPath: m_LocalScale.x
@@ -38077,15 +38055,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01aac5c4e206bf644bf54ca2410d703f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.652
+      value: -0.73599994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01aac5c4e206bf644bf54ca2410d703f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.738
+      value: 0.48399997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01aac5c4e206bf644bf54ca2410d703f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.167
+      value: -0.239
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01aac5c4e206bf644bf54ca2410d703f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40271,12 +40249,12 @@ GameObject:
   - component: {fileID: 775181542}
   - component: {fileID: 775181541}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: lumiere_nuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &775181541
 Light:
   m_ObjectHideFlags: 0
@@ -40284,7 +40262,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775181540}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.31618595, g: 0.31682986, b: 0.45911938, a: 1}
@@ -51134,6 +51112,7 @@ Transform:
   - {fileID: 997083064}
   - {fileID: 1798072284}
   - {fileID: 1328619489}
+  - {fileID: 1305206308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989097367
@@ -52185,7 +52164,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 987784785}
     m_Modifications:
     - target: {fileID: 454348224860429962, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52205,7 +52184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454348224860429962, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 454348224860429962, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
       propertyPath: m_LocalRotation.y
@@ -52230,6 +52209,14 @@ PrefabInstance:
     - target: {fileID: 938433042128749616, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
       propertyPath: m_Name
       value: mainFoetus+Materiaux
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136997826475286354, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
+      propertyPath: m_Range
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136997826475286354, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
+      propertyPath: m_Intensity
+      value: 2.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53063,6 +53050,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d047f8be423b6b8469e320fe57de6365, type: 3}
       propertyPath: m_Name
       value: Rock17
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d047f8be423b6b8469e320fe57de6365, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d047f8be423b6b8469e320fe57de6365, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60096,7 +60087,6 @@ GameObject:
   - component: {fileID: 1286523220}
   - component: {fileID: 1286523223}
   - component: {fileID: 1286523222}
-  - component: {fileID: 1286523221}
   m_Layer: 0
   m_Name: Gazonhaut (98)
   m_TagString: Untagged
@@ -60119,28 +60109,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 578462868}
   m_LocalEulerAnglesHint: {x: 85.204, y: 0, z: -101.136}
---- !u!64 &1286523221
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286523219}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1286523222
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60743,6 +60711,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1305206308 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 454348224860429962, guid: 1a7ae63b265169748b323967241eb9d2, type: 3}
+  m_PrefabInstance: {fileID: 1019524347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306207147
 GameObject:
   m_ObjectHideFlags: 0
@@ -62834,7 +62807,6 @@ GameObject:
   - component: {fileID: 1360692132}
   - component: {fileID: 1360692135}
   - component: {fileID: 1360692134}
-  - component: {fileID: 1360692133}
   m_Layer: 0
   m_Name: serre_gorays
   m_TagString: Untagged
@@ -62857,29 +62829,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 793073984}
   m_LocalEulerAnglesHint: {x: -76.132, y: 96.237, z: -185.072}
---- !u!114 &1360692133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360692131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef3c1d80420dc743931791b9f608319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Switch: {fileID: 0}
-  matNuit: {fileID: 0}
-  matJour: {fileID: 0}
-  environnement: {fileID: 0}
-  GodraysJour: {fileID: 1360692135}
-  GodraysNuit: {fileID: 2091075732}
-  musique: {fileID: 0}
-  sonSwitch: {fileID: 0}
-  sonJour: {fileID: 0}
-  sonNuit: {fileID: 0}
-  criquets: {fileID: 0}
 --- !u!199 &1360692134
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -71133,7 +71082,6 @@ GameObject:
   - component: {fileID: 1495977705}
   - component: {fileID: 1495977704}
   - component: {fileID: 1495977703}
-  - component: {fileID: 1495977702}
   m_Layer: 0
   m_Name: Jour_GodRays
   m_TagString: Untagged
@@ -71141,29 +71089,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1495977702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495977701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef3c1d80420dc743931791b9f608319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Switch: {fileID: 0}
-  matNuit: {fileID: 0}
-  matJour: {fileID: 0}
-  environnement: {fileID: 0}
-  GodraysJour: {fileID: 1495977704}
-  GodraysNuit: {fileID: 216954758}
-  musique: {fileID: 0}
-  sonSwitch: {fileID: 0}
-  sonJour: {fileID: 0}
-  sonNuit: {fileID: 0}
-  criquets: {fileID: 0}
 --- !u!199 &1495977703
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -83189,7 +83114,6 @@ GameObject:
   - component: {fileID: 1798072284}
   - component: {fileID: 1798072283}
   - component: {fileID: 1798072282}
-  - component: {fileID: 1798072281}
   m_Layer: 0
   m_Name: vigne
   m_TagString: Untagged
@@ -83197,27 +83121,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1798072281
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798072280}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1798072282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83984,7 +83887,6 @@ GameObject:
   - component: {fileID: 1822155909}
   - component: {fileID: 1822155912}
   - component: {fileID: 1822155911}
-  - component: {fileID: 1822155910}
   m_Layer: 0
   m_Name: Gazonhaut (100)
   m_TagString: Untagged
@@ -84007,28 +83909,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 578462868}
   m_LocalEulerAnglesHint: {x: 85.204, y: 0, z: -33.056}
---- !u!64 &1822155910
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822155908}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1822155911
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91914,7 +91794,6 @@ GameObject:
   - component: {fileID: 2091075735}
   - component: {fileID: 2091075732}
   - component: {fileID: 2091075734}
-  - component: {fileID: 2091075733}
   m_Layer: 0
   m_Name: serre_bluerays
   m_TagString: Untagged
@@ -92112,7 +91991,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.94654083, g: 1, b: 0.98908997, a: 1}
+      maxColor: {r: 0.5767176, g: 0.7067397, b: 0.754717, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -96645,29 +96524,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &2091075733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091075731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef3c1d80420dc743931791b9f608319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Switch: {fileID: 0}
-  matNuit: {fileID: 0}
-  matJour: {fileID: 0}
-  environnement: {fileID: 0}
-  GodraysJour: {fileID: 1360692135}
-  GodraysNuit: {fileID: 2091075732}
-  musique: {fileID: 0}
-  sonSwitch: {fileID: 0}
-  sonJour: {fileID: 0}
-  sonNuit: {fileID: 0}
-  criquets: {fileID: 0}
 --- !u!199 &2091075734
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -97450,6 +97306,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 958747103}
   m_LocalEulerAnglesHint: {x: 88.774, y: -23.944, z: -159.253}
+--- !u!4 &2107034679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 01aac5c4e206bf644bf54ca2410d703f, type: 3}
+  m_PrefabInstance: {fileID: 723605780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2109582303
 GameObject:
   m_ObjectHideFlags: 0
@@ -98885,7 +98746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7069918631508426034, guid: c58829182f121f24aa5317a22823ca57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.587
+      value: -0.611
       objectReference: {fileID: 0}
     - target: {fileID: 7069918631508426034, guid: c58829182f121f24aa5317a22823ca57, type: 3}
       propertyPath: m_LocalPosition.y
@@ -98893,7 +98754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7069918631508426034, guid: c58829182f121f24aa5317a22823ca57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.417
+      value: 3.419
       objectReference: {fileID: 0}
     - target: {fileID: 7069918631508426034, guid: c58829182f121f24aa5317a22823ca57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -99033,5 +98894,3 @@ SceneRoots:
   - {fileID: 1512067966}
   - {fileID: 1250994805}
   - {fileID: 894556777}
-  - {fileID: 723605780}
-  - {fileID: 1019524347}
