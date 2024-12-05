@@ -33,6 +33,11 @@ public class changeSkybox : MonoBehaviour
     public GameObject serre_jour_gorays; // Le systeme de particules "Godrays" pour le jour 
     public GameObject serre_nuit_gorays; // Le systeme de particules "Godrays" pour la nuit
 
+    public GameObject messagePorte;
+    public GameObject messageSwitch;
+    public GameObject messOuv;
+    public GameObject poigneeFoetus;
+
     /*-------------- Les musiques et sons --------------*/
     // L'AudioSource
     public AudioSource musique;
@@ -64,7 +69,7 @@ public class changeSkybox : MonoBehaviour
         // Regarde le booleen pour activer/ desactiver la light switch
         switch (interagit)
         {
-            // Si faux...
+            // Si faux... LA NUIT
             case false:
                 // On passe à la nuit dans le script des statues
                 weepingAngel.Nuit = true;
@@ -87,12 +92,17 @@ public class changeSkybox : MonoBehaviour
                 GodraysNuit.gameObject.SetActive(true);
                 serre_jour_gorays.gameObject.SetActive(false);
                 serre_nuit_gorays.gameObject.SetActive(true);
+                // Section du contrôle des messages Canvas
+                messagePorte.gameObject.SetActive(false);
+                messageSwitch.gameObject.SetActive(false);
+                messOuv.gameObject.SetActive(true);
+                poigneeFoetus.gameObject.SetActive(true);
                 // On fait jouer le son de la switch
                 sonSwitch.Play();
                 break;
                 // Fin du bloc
 
-            // Si vrai...
+            // Si vrai... LE JOUR
             case true:
                 // On passe au jour dans le script des statues
                 weepingAngel.Nuit = false;
@@ -115,6 +125,11 @@ public class changeSkybox : MonoBehaviour
                 GodraysNuit.gameObject.SetActive(false);
                 serre_jour_gorays.gameObject.SetActive(true);
                 serre_nuit_gorays.gameObject.SetActive(false);
+                // Section du contrôle des messages Canvas
+                messagePorte.gameObject.SetActive(true);
+                messageSwitch.gameObject.SetActive(true);
+                messOuv.gameObject.SetActive(false);
+                poigneeFoetus.gameObject.SetActive(false);
                 // On fait jouer le son de la switch
                 sonSwitch.Play();
                 break;
