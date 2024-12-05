@@ -1,0 +1,8 @@
+LAMP -> Statues
+PLANT -> Plantes
+COUCH -> Bancs
+STORAGE -> 
+SCREEN -> 
+TABLE -> Table
+BED -> Piano
+
