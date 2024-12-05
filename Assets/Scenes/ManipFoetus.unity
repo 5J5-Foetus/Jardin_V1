@@ -405,6 +405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Marmite
       objectReference: {fileID: 0}
+    - target: {fileID: -4857129117553318336, guid: 48a83512869af4b48a1285218d514fb4, type: 3}
+      propertyPath: m_TagString
+      value: marmite
+      objectReference: {fileID: 0}
     - target: {fileID: -4056393763422867854, guid: 48a83512869af4b48a1285218d514fb4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -13789,6 +13793,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e01e2620725963e49bc7ec8a53232b28, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1313621220}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e01e2620725963e49bc7ec8a53232b28, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1313621221}
   m_SourcePrefab: {fileID: 100100000, guid: e01e2620725963e49bc7ec8a53232b28, type: 3}
 --- !u!1 &1313621217 stripped
 GameObject:
@@ -13850,6 +13857,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1313621221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313621217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299470aedc84054408a5ab6f572386c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pedestalFoetus: {fileID: 0}
+  particulesFoetus: {fileID: 0}
+  foetus: {fileID: 1313621217}
+  marmite: {fileID: 44260564}
+  sacTerre: {fileID: 411843905}
+  sonActivation: {fileID: 8300000, guid: b42b451ca1c1a5447845241ccd6b3468, type: 3}
 --- !u!1 &1314082785
 GameObject:
   m_ObjectHideFlags: 0
@@ -16042,7 +16067,7 @@ GameObject:
   - component: {fileID: 1495976993}
   - component: {fileID: 1495976992}
   m_Layer: 0
-  m_Name: rr
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

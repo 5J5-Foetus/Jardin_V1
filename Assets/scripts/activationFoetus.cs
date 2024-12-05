@@ -8,6 +8,8 @@ public class activationFoetus : MonoBehaviour
     public GameObject pedestalFoetus;
     public GameObject particulesFoetus;
     public GameObject foetus;
+    public GameObject marmite; //Lorsque le foetus sera jeté dans la marmite, il se transforme en sac de terre
+    public GameObject sacTerre; //Le GameObject du foetus sera désactivé et celui du sac de terre activé
 
     /*----- Les composantes des GameObjects -----*/
     Animator animator;
@@ -47,5 +49,8 @@ public class activationFoetus : MonoBehaviour
     {
         particulesFoetus.SetActive(true);
     }
+
+    /*----- Fonction pour transformer le foetus en sac de fertilisant -----*/
+
 
 }
