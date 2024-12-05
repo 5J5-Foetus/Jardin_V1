@@ -29,52 +29,69 @@ public class weepingAngel : MonoBehaviour
     public float vitesseRotation = 5f; // La vitesse de rotation de la statue
 
     /*----- Bool -----*/
-    public static bool Nuit = false;
+    public static bool Nuit = false; // Determine si on est la nuit ou le jour
 
     private void Update()
     {
         // Calcul de la region visible par la caméra dans l'environnement 3D (Frustrum) 
         Plane[] plane = GeometryUtility.CalculateFrustumPlanes(CamJoueur);
+        
+        // La distance a laquelle la statue doit s'arreter
+        float distanceArret = 1f; // Distance a laquelle la statue s'arrete du joueur
+        // Calcul de ladifference de distance entre la position entre la statue et le joueur
+        var diffDistances = Vector3.Distance(joueur_Transform.position, transform.position);
 
-        // Si la statue est dans le frustrum de la camera ET qu'on est le jour...
-        if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
+        // Si la difference de distance est plus petite ou egale a la distance d'arret
+        if (diffDistances <= distanceArret)
         {
-            // La vitesse de la statue est mise à 0 et elle garde sa position actuelle
-            statueAI.speed = 0f;
-            // La statue ne peut pas tourner sur elle-même
-            statueAI.updateRotation = false;
+            // On arrete la statue
+            statueAI.isStopped = true;
         }
-        // Si la statue n'est pas en vue ET qu'on est le jour...
-        else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
+        else
         {
-            // La vitesse de la statue change au nombre entré dans l'inspecteur
-            statueAI.speed = statue_Vitesse;
-            // La statue peut tourner et on lance la fonction qui fait se tourner la statue
-            statueAI.updateRotation = true;
-            RotationJoueur();
-        }
-        // Si la statue est dans le frustrum de la camera ET qu'on est la nuit...
-        else if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
-        {
-            // La vitesse de la statue passe à 0
-            statueAI.speed = 0f;
-            // La rotation de la statue n'est plus possible
-            statueAI.updateRotation = false;
-            // La destination de la statue est changée pour sa propre position donc elle ne bougera pas
-            statueAI.SetDestination(transform.position);
-        }
-        // Si la statue n'est pas en vue ET qu'on est la nuit...
-        else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
-        {
-            // La vitesse de la statue change au nombre entre dans l'inspecteur
-            statueAI.speed = statue_Vitesse;
-            // La variable destination de la statue devient la position du joueur
-            destination = joueur_Transform.position;
-            // On associe la destination du NavMesh à la variable
-            statueAI.destination = destination;
-            // La statue peut se tourner et on lance la fonction qui permet la rotation
-            statueAI.updateRotation = true;
-            RotationJoueur();
+            // On repart la statue
+            statueAI.isStopped = false;
+
+            // Si la statue est dans le frustrum de la camera ET qu'on est le jour...
+            if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
+            {
+                // La vitesse de la statue est mise à 0 et elle garde sa position actuelle
+                statueAI.speed = 0f;
+                // La statue ne peut pas tourner sur elle-même
+                statueAI.updateRotation = false;
+            }
+            // Si la statue n'est pas en vue ET qu'on est le jour...
+            else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
+            {
+                // La vitesse de la statue change au nombre entré dans l'inspecteur
+                statueAI.speed = statue_Vitesse;
+                // La statue peut tourner et on lance la fonction qui fait se tourner la statue
+                statueAI.updateRotation = true;
+                RotationJoueur();
+            }
+            // Si la statue est dans le frustrum de la camera ET qu'on est la nuit...
+            else if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
+            {
+                // La vitesse de la statue passe à 0
+                statueAI.speed = 0f;
+                // La rotation de la statue n'est plus possible
+                statueAI.updateRotation = false;
+                // La destination de la statue est changée pour sa propre position donc elle ne bougera pas
+                statueAI.SetDestination(transform.position);
+            }
+            // Si la statue n'est pas en vue ET qu'on est la nuit...
+            else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
+            {
+                // La vitesse de la statue change au nombre entre dans l'inspecteur
+                statueAI.speed = statue_Vitesse;
+                // La variable destination de la statue devient la position du joueur
+                destination = joueur_Transform.position;
+                // On associe la destination du NavMesh à la variable
+                statueAI.destination = destination;
+                // La statue peut se tourner et on lance la fonction qui permet la rotation
+                statueAI.updateRotation = true;
+                RotationJoueur();
+            }
         }
     }
 
