@@ -15277,6 +15277,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 536900267}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: messOuv
+      value: 
+      objectReference: {fileID: 2119982897}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: musique
       value: 
       objectReference: {fileID: 451896769}
@@ -15313,9 +15317,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 628678951}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: messagePorte
+      value: 
+      objectReference: {fileID: 1310632211}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: environnement
       value: 
       objectReference: {fileID: 705507994}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: messageSwitch
+      value: 
+      objectReference: {fileID: 967706645}
+    - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
+      propertyPath: poigneeFoetus
+      value: 
+      objectReference: {fileID: 345555773}
     - target: {fileID: 1255665046319585411, guid: cc66015c112072c479fb600ffafd8d54, type: 3}
       propertyPath: serre_jour_gorays
       value: 
@@ -18194,6 +18210,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1153005902}
     m_Modifications:
+    - target: {fileID: 2214021122774409906, guid: 43eee9f9554092940955b82111321ef9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2457523139892605063, guid: 43eee9f9554092940955b82111321ef9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1
@@ -18255,6 +18275,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eee9f9554092940955b82111321ef9, type: 3}
+--- !u!1 &345555773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2214021122774409906, guid: 43eee9f9554092940955b82111321ef9, type: 3}
+  m_PrefabInstance: {fileID: 345555772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &357546581
 GameObject:
   m_ObjectHideFlags: 0
@@ -50228,7 +50253,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967706645}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -798}
+  m_LocalPosition: {x: 0, y: 0, z: -793.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50261,8 +50286,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xC9teignez la lumi\xE8re."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 83b3bf426efc58d48a5dc254e0cc6349, type: 2}
+  m_sharedMaterial: {fileID: 8235169884522305284, guid: 83b3bf426efc58d48a5dc254e0cc6349, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -50286,8 +50311,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -60783,6 +60808,8 @@ MonoBehaviour:
   pedestalFoetus: {fileID: 1305206304}
   particulesFoetus: {fileID: 1019524350}
   foetus: {fileID: 1019524348}
+  marmite: {fileID: 0}
+  sacTerre: {fileID: 0}
   sonActivation: {fileID: 8300000, guid: b42b451ca1c1a5447845241ccd6b3468, type: 3}
 --- !u!95 &1305206310
 Animator:
@@ -61081,8 +61108,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "La porte est barr\xE9e.\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 83b3bf426efc58d48a5dc254e0cc6349, type: 2}
+  m_sharedMaterial: {fileID: 8235169884522305284, guid: 83b3bf426efc58d48a5dc254e0cc6349, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -61106,8 +61133,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -98129,7 +98156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2119982898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -98171,8 +98198,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: La porte est ouverte.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 83b3bf426efc58d48a5dc254e0cc6349, type: 2}
+  m_sharedMaterial: {fileID: 8235169884522305284, guid: 83b3bf426efc58d48a5dc254e0cc6349, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98196,8 +98223,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
