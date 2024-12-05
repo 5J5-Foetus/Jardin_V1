@@ -50,7 +50,16 @@ public class activationFoetus : MonoBehaviour
         particulesFoetus.SetActive(true);
     }
 
-    /*----- Fonction pour transformer le foetus en sac de fertilisant -----*/
+    /*----- Fonction pour le foetus en sac de terre lorsqu'il est jeté dans la marmite -----*/
+    private void OnCollisionEnter(Collision infoCollision)
+    {
+        if ((infoCollision.gameObject.name == "foetus") && (infoCollision.gameObject.name == "marmite"))
+        {
+            foetus.gameObject.SetActive(false);
+            sacTerre.gameObject.SetActive(true);
+            GetComponent<AudioSource>().PlayOneShot(sonActivation);
+        }
+    } 
 
 
 }
