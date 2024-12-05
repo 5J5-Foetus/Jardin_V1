@@ -48,7 +48,7 @@ public class weepingAngel : MonoBehaviour
         else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && !Nuit)
         {
             // La vitesse de la statue change au nombre entré dans l'inspecteur
-               statueAI.speed = statue_Vitesse;
+            statueAI.speed = statue_Vitesse;
             // La statue peut tourner et on lance la fonction qui fait se tourner la statue
             statueAI.updateRotation = true;
             RotationJoueur();
@@ -67,16 +67,16 @@ public class weepingAngel : MonoBehaviour
         else if (!GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds) && Nuit)
         {
             // La vitesse de la statue change au nombre entre dans l'inspecteur
-                statueAI.speed = statue_Vitesse;
+            statueAI.speed = statue_Vitesse;
             // La variable destination de la statue devient la position du joueur
-               destination = joueur_Transform.position;
+            destination = joueur_Transform.position;
             // On associe la destination du NavMesh à la variable
-               statueAI.destination = destination;
+            statueAI.destination = destination;
             // La statue peut se tourner et on lance la fonction qui permet la rotation
-                statueAI.updateRotation = true;
-                RotationJoueur();
+            statueAI.updateRotation = true;
+            RotationJoueur();
         }
-    }   
+    }
 
     /*================================================
      * Fonction d'update de la rotation de la statue *
