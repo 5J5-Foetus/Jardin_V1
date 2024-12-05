@@ -51036,6 +51036,7 @@ Transform:
   - {fileID: 958747103}
   - {fileID: 1662929414}
   - {fileID: 2128575278}
+  - {fileID: 1482007967}
   - {fileID: 220162752}
   - {fileID: 831546902}
   - {fileID: 1466015279}
@@ -51043,7 +51044,6 @@ Transform:
   - {fileID: 1798072284}
   - {fileID: 1328619489}
   - {fileID: 1305206308}
-  - {fileID: 1482007967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989097367
