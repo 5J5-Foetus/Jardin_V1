@@ -56605,9 +56605,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.083333336
+  m_VoxelSize: 0.06666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f3281c3cef780ec489a65d582bbf9102, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 74e90deb50196e944b92a8cd8276c253, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1250994805
 Transform:
@@ -66258,6 +66258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonPiano: {fileID: 8300000, guid: 71b9157de63944fc9b53f83250e927dc, type: 3}
   TriggerPiano: {fileID: 191918511}
+  PianoAjouer: 0
 --- !u!82 &1681412499
 AudioSource:
   m_ObjectHideFlags: 0
