@@ -16,4 +16,12 @@ public class sonTriggerPiano : MonoBehaviour
             PianoAjouer = true;
         }
     }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject == TriggerPiano)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
