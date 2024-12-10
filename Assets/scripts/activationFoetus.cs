@@ -55,9 +55,9 @@ public class activationFoetus : MonoBehaviour
     }
 
     /*----- Fonction pour le foetus en sac de terre lorsqu'il est jeté dans la marmite -----*/
-    private void OnCollisionEnter(Collision infoCollision)
+    private void OnTriggerEnter(Collider infoTrigger)
     {
-        if ((infoCollision.gameObject.name == "foetus") && (infoCollision.gameObject.tag == "marmite"))
+        if ((infoTrigger.gameObject.name == "foetus") && (infoTrigger.gameObject.tag == "marmite"))
         {
             foetus.gameObject.SetActive(false);
             sacTerre.gameObject.SetActive(true);
