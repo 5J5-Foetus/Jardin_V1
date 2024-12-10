@@ -19,9 +19,12 @@ public class yeuxStatue : MonoBehaviour
 
     void Update()
     {
-        ActivationYeux();
+        ActivationYeux(); // La fonction pour activer les yeux est appelee
     }
 
+    /*--------------------------
+     * FONCTION SUPPLEMENTAIRES *
+     ---------------------------*/
     void ActivationYeux()
     {
         switch (weepingAngel.Nuit)
