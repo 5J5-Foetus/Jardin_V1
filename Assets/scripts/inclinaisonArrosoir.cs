@@ -10,15 +10,17 @@ public class inclinaisonArrosoir : MonoBehaviour
     public Vector3 bonneDirection = Vector3.forward; // Direction dans laquelle l'eau peut couler
     public AudioSource sonEau;
 
-    private bool estActif = false; // Vérifie si l'arrosoir est déjà actif
 
     void Start()
     {
         sonEau = GetComponent<AudioSource>();
     }
+
+
     // Update is called once per frame
     void Update()
     {
+
         // Calculer l'angle entre l'arrosoir et la verticale
         float angle = Vector3.Angle(arrosoir.up, Vector3.up);
 
@@ -47,5 +49,6 @@ public class inclinaisonArrosoir : MonoBehaviour
             }
 
         }
+
     }
 }
