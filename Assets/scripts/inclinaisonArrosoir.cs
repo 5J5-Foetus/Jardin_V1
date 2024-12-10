@@ -8,7 +8,14 @@ public class inclinaisonArrosoir : MonoBehaviour
     public float angleInclinaison = 45f; //en degrés
     public Transform arrosoir;
     public Vector3 bonneDirection = Vector3.forward; // Direction dans laquelle l'eau peut couler
+    public AudioSource sonEau;
 
+    private bool estActif = false; // Vérifie si l'arrosoir est déjà actif
+
+    void Start()
+    {
+        sonEau = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -25,12 +32,20 @@ public class inclinaisonArrosoir : MonoBehaviour
         if (angle > angleInclinaison && versSol && bonneInclinaison)
         {
             if (!eauArrosoir.isPlaying)
+            {
                 eauArrosoir.Play();
+                sonEau.Play();
+            }
         }
         else
         {
             if (eauArrosoir.isPlaying)
+            {
                 eauArrosoir.Stop();
+                sonEau.Stop();
+
+            }
+
         }
     }
 }
