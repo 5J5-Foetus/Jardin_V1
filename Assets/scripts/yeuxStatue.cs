@@ -19,16 +19,29 @@ public class yeuxStatue : MonoBehaviour
 
     void Update()
     {
-        // Calcul de la region visible par la caméra dans l'environnement 3D (Frustrum) 
-        Plane[] plane = GeometryUtility.CalculateFrustumPlanes(CamJoueur);
 
-        if (GeometryUtility.TestPlanesAABB(plane, this.gameObject.GetComponent<Renderer>().bounds))
-        {
-
-        }
-
-
+        ActivationYeux();
     }
 
-    //void 
+    void ActivationYeux()
+    {
+        switch (weepingAngel.Nuit)
+        {
+            // Le JOUR
+            case true:
+                foreach (var oeil in yeux)
+                {
+                    oeil.Stop();
+                }
+                break;
+            // La NUIT
+            case false:
+                foreach (var oeil in yeux)
+                {
+                    oeil.Play();
+                }
+                break;
+        }
+    }
+
 }
