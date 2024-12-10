@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class sonTriggerPiano : MonoBehaviour
 {
-    public AudioSource sonPiano;
+    public AudioClip sonPiano;
+    public AudioSource audioPiano;
     public GameObject TriggerPiano;
     public bool PianoAjouer;
+
+    private void Start()
+    {
+        audioPiano = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider trigger)
     {
         if(trigger.gameObject == TriggerPiano)
         {
-            GetComponent<AudioSource>().PlayOneShot(sonPiano);
+            audioPiano.PlayOneShot(sonPiano);
             PianoAjouer = true;
         }
     }
@@ -21,8 +27,7 @@ public class sonTriggerPiano : MonoBehaviour
     {
         if (collision.gameObject == TriggerPiano)
         {
-            GetComponent<AudioSource>().Stop();
-            Dedans = false;
+            audioPiano.Stop();
         }
     }
 }
