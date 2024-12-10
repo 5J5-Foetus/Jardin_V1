@@ -22,7 +22,6 @@ public class sonTriggerPiano : MonoBehaviour
         if (collision.gameObject == TriggerPiano)
         {
             GetComponent<AudioSource>().Stop();
-           // Dedans = false;
         }
     }
 }
