@@ -25,6 +25,7 @@ public class yeuxStatue : MonoBehaviour
     /*--------------------------
      * FONCTION SUPPLEMENTAIRES *
      ---------------------------*/
+    // fonction qui active les particules 
     void ActivationYeux()
     {
         switch (weepingAngel.Nuit)
