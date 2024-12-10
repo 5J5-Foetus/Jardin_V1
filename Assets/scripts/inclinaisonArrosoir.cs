@@ -25,13 +25,13 @@ public class inclinaisonArrosoir : MonoBehaviour
         float angle = Vector3.Angle(arrosoir.up, Vector3.up);
 
         // Vérifier si l'arrosoir est orienté vers le bas
-        bool versSol = Vector3.Dot(arrosoir.forward, Vector3.up) > 0;
+        bool versSol = Vector3.Dot(arrosoir.forward, Vector3.up) < 0;
 
         // Vérifier si l'entonnoir est incliné dans la bonne direction
         bool bonneInclinaison = Vector3.Dot(arrosoir.forward, bonneDirection) > 0;
 
         // Activer ou désactiver le système de particules selon l'inclinaison
-        if (angle > angleInclinaison && versSol && bonneInclinaison)
+        if (angle > angleInclinaison && versSol )
         {
             if (!eauArrosoir.isPlaying)
             {
