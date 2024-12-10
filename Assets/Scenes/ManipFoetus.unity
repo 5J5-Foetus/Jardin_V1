@@ -445,6 +445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_FeuCamp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48a83512869af4b48a1285218d514fb4, type: 3}
+      propertyPath: m_TagString
+      value: marmite
+      objectReference: {fileID: 0}
     - target: {fileID: 1140055734416181253, guid: 48a83512869af4b48a1285218d514fb4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -485,6 +489,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6027a640f2981724cbcf0a4a42bfffff, type: 2}
+    - target: {fileID: 6167619682871867033, guid: 48a83512869af4b48a1285218d514fb4, type: 3}
+      propertyPath: m_TagString
+      value: marmite
+      objectReference: {fileID: 0}
     - target: {fileID: 7526870567297428295, guid: 48a83512869af4b48a1285218d514fb4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

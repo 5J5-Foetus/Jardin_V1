@@ -19,7 +19,7 @@ public class activationFoetus : MonoBehaviour
 
     public AudioClip sonActivation;
 
-    private bool attrape = false;
+    //private bool attrape = false;
 
     void Start()
     {
@@ -57,11 +57,12 @@ public class activationFoetus : MonoBehaviour
     /*----- Fonction pour le foetus en sac de terre lorsqu'il est jeté dans la marmite -----*/
     private void OnCollisionEnter(Collision infoCollision)
     {
-        if ((infoCollision.gameObject.name == "foetus") && (infoCollision.gameObject.name == "marmite"))
+        if ((infoCollision.gameObject.name == "foetus") && (infoCollision.gameObject.tag == "marmite"))
         {
             foetus.gameObject.SetActive(false);
             sacTerre.gameObject.SetActive(true);
             GetComponent<AudioSource>().PlayOneShot(sonActivation);
+            Debug.Log("Le foetus touche la marmite");
         }
     }
 
