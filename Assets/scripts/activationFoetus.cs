@@ -57,7 +57,7 @@ public class activationFoetus : MonoBehaviour
     /*----- Fonction pour le foetus en sac de terre lorsqu'il est jeté dans la marmite -----*/
     private void OnTriggerEnter(Collider infoTrigger)
     {
-        if ((infoTrigger.gameObject.name == "foetus") && (infoTrigger.gameObject.tag == "marmite"))
+        if (infoTrigger.tag == "marmite")
         {
             foetus.gameObject.SetActive(false);
             sacTerre.gameObject.SetActive(true);
@@ -65,40 +65,4 @@ public class activationFoetus : MonoBehaviour
             Debug.Log("Le foetus touche la marmite");
         }
     }
-
-
-
-    //private void OnEnable()
-    //{
-    //    // If the object is an XR Grab Interactable, hook into the grab events
-    //    XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
-    //    if (grabInteractable != null)
-    //    {
-    //        grabInteractable.selectEntered.AddListener(OnGrabbed);
-    //        grabInteractable.selectExited.AddListener(OnReleased);
-    //    }
-    //}
-    //private void OnDisable()
-    //{
-    //    // Unsubscribe from events when the object is disabled
-    //    XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
-    //    if (grabInteractable != null)
-    //    {
-    //        grabInteractable.selectEntered.RemoveListener(OnGrabbed);
-    //        grabInteractable.selectExited.RemoveListener(OnReleased);
-    //    }
-    //}
-
-    //private void OnGrabbed(SelectEnterEventArgs args)
-    //{
-    //    attrape = true;  // Set flag to true when grabbed
-    //    Debug.Log("Object is being grabbed!");
-    //}
-
-    //// Called when the object is released
-    //private void OnReleased(SelectExitEventArgs args)
-    //{
-    //    attrape = false;  // Set flag to false when released
-    //    Debug.Log("Object was released.");
-    //}
 }
