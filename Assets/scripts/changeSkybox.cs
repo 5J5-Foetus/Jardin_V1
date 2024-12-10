@@ -58,7 +58,6 @@ public class changeSkybox : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("La nuit a commencé:" + weepingAngel.Nuit); // Pour voir le changement de la bool contrôllé par le script "weepingAngel"
     }
 
     /* ===================================
