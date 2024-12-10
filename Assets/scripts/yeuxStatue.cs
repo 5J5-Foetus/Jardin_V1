@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class yeuxStatue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ParticleSystem[] yeux; // Les 2 yeux de la statue
 
-    // Update is called once per frame
+    bool detectionStatue;
+
+    
     void Update()
     {
-        
+        switch (weepingAngel.Nuit)
+        {
+            // Si c'est la NUIT...
+            case true:
+                foreach (var oeil in yeux)
+                {
+                    oeil.Play();
+                }
+                break;
+            // Si c'est le JOUR...
+            case false:
+                foreach (var oeil in yeux)
+                {
+                    oeil.Stop();
+                }
+                break;
+        }
     }
 }
