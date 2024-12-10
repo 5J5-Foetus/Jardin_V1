@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class sonTriggerPiano : MonoBehaviour
 {
-    public AudioClip sonPiano;
+    public AudioSource sonPiano;
     public GameObject TriggerPiano;
-    public bool Dedans = false;
+    public bool Dedans= false;
 
     private void Start()
     {
-        //GetComponent<AudioSource>().Stop();
+        sonPiano = GetComponent<AudioSource>();
+        sonPiano.Stop();
     }
 
-    private void OnTriggerEnter(Collider collision)
+   void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "TriggerPiano")
+        if(collision.gameObject == TriggerPiano)
         {
-            GetComponent<AudioSource>().PlayOneShot(sonPiano);
+            sonPiano.Play();
+            //GetComponent<AudioSource>().PlayOneShot(sonPiano);
             Dedans = true;
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "TriggerPiano")
+        if (collision.gameObject == TriggerPiano)
         {
             GetComponent<AudioSource>().Stop();
             Dedans = false;
