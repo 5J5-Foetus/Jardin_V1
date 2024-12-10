@@ -6,20 +6,28 @@ public class sonTriggerPiano : MonoBehaviour
 {
     public AudioClip sonPiano;
     public GameObject TriggerPiano;
+    public bool Dedans = false;
+
+    private void Start()
+    {
+        //GetComponent<AudioSource>().Stop();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject == TriggerPiano)
+        if(collision.gameObject.tag == "TriggerPiano")
         {
             GetComponent<AudioSource>().PlayOneShot(sonPiano);
+            Dedans = true;
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject == TriggerPiano)
+        if (collision.gameObject.tag == "TriggerPiano")
         {
-            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Stop();
+            Dedans = false;
         }
     }
 }

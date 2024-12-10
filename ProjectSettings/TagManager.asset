@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Environnement
+  - TriggerPiano
   layers:
   - Default
   - TransparentFX
