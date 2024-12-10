@@ -19,7 +19,6 @@ public class yeuxStatue : MonoBehaviour
 
     void Update()
     {
-
         ActivationYeux();
     }
 
@@ -31,14 +30,16 @@ public class yeuxStatue : MonoBehaviour
             case true:
                 foreach (var oeil in yeux)
                 {
-                    oeil.Stop();
+                    oeil.Play();
+                    Debug.Log("La nuit, les yeux sont ouverts!");
                 }
                 break;
             // La NUIT
             case false:
                 foreach (var oeil in yeux)
                 {
-                    oeil.Play();
+                    oeil.Stop();
+                    Debug.Log("Le jour, les yeux sont fermés!");
                 }
                 break;
         }
