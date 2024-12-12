@@ -26820,8 +26820,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.46793258
+  m_Center: {x: 0, y: 0.017932594, z: 0}
 --- !u!4 &422903690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 8148bab12d6c4774090c91e96b6507a0, type: 3}
@@ -26936,7 +26936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6836e5079061d46c794bcbeead7b45a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particulesEau: {fileID: 0}
+  particulesEau: {fileID: 1893988939}
   goutteEau: 0
   goutteEauComplete: 50
   sonComplete: {fileID: 8300000, guid: b42b451ca1c1a5447845241ccd6b3468, type: 3}
@@ -43340,8 +43340,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.34
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.3594187
+  m_Center: {x: 0, y: 0.019418657, z: 0}
 --- !u!4 &669343998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: a07d1aa7e785c5c42b299ac0cddcca95, type: 3}
@@ -46550,8 +46550,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.46
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5417397
+  m_Center: {x: 0, y: 0.08173965, z: 0}
 --- !u!4 &757022372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 8148bab12d6c4774090c91e96b6507a0, type: 3}
@@ -103931,7 +103931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6836e5079061d46c794bcbeead7b45a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particulesEau: {fileID: 0}
+  particulesEau: {fileID: 1893988939}
   goutteEau: 0
   goutteEauComplete: 50
   sonComplete: {fileID: 8300000, guid: b42b451ca1c1a5447845241ccd6b3468, type: 3}
@@ -112825,8 +112825,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.19
-  m_Center: {x: -0.013348341, y: 0.2275932, z: -0.012674771}
+  m_Radius: 0.20701241
+  m_Center: {x: -0.013348341, y: 0.24460563, z: -0.012674779}
 --- !u!4 &1988104329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: ef275eb8eb9669949ad0f4a31466e4f2, type: 3}
