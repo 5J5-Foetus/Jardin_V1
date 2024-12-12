@@ -28,6 +28,7 @@ TagManager:
   - QDSUIToggleCheckboxRadio
   - QDSUISection
   - target
+  - sacTerre
   layers:
   - Default
   - TransparentFX
