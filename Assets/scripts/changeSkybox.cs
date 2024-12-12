@@ -33,6 +33,8 @@ public class changeSkybox : MonoBehaviour
     public GameObject serre_jour_gorays; // Le systeme de particules "Godrays" pour le jour 
     public GameObject serre_nuit_gorays; // Le systeme de particules "Godrays" pour la nuit
 
+    /*---- Canvas -----*/
+    public Canvas canvasIngredient;
     public GameObject messagePorte;
     public GameObject messageSwitch;
     public GameObject messOuv;
@@ -95,6 +97,7 @@ public class changeSkybox : MonoBehaviour
                 messagePorte.gameObject.SetActive(false);
                 messageSwitch.gameObject.SetActive(false);
                 messOuv.gameObject.SetActive(true);
+                canvasIngredient.gameObject.SetActive(true);
                 poigneeFoetus.gameObject.SetActive(true);
                 // On fait jouer le son de la switch
                 sonSwitch.Play();
@@ -129,6 +132,7 @@ public class changeSkybox : MonoBehaviour
                 messageSwitch.gameObject.SetActive(true);
                 messOuv.gameObject.SetActive(false);
                 poigneeFoetus.gameObject.SetActive(false);
+                canvasIngredient.gameObject.SetActive(false);
                 // On fait jouer le son de la switch
                 sonSwitch.Play();
                 break;

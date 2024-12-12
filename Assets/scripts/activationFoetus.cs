@@ -53,16 +53,4 @@ public class activationFoetus : MonoBehaviour
     {
         particulesFoetus.SetActive(true);
     }
-
-    /*----- Fonction pour le foetus en sac de terre lorsqu'il est jeté dans la marmite -----*/
-    private void OnTriggerEnter(Collider infoTrigger)
-    {
-        if (infoTrigger.tag == "marmite")
-        {
-            foetus.gameObject.SetActive(false);
-            sacTerre.gameObject.SetActive(true);
-            GetComponent<AudioSource>().PlayOneShot(sonActivation);
-            Debug.Log("Le foetus touche la marmite");
-        }
-    }
 }
