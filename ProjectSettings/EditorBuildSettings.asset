@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestDecor minji.unity
-    guid: fbe4a6f590eaa49859ce725c26d9ad13
+    path: Assets/Scenes/TestDecor.unity
+    guid: 120e6b1abfb339b47bfc7dc0251a3264
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f6ebf9d8806e59149afe7a9d4409db72, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 0c41f6f7bfae9b340a88de1053680d9e, type: 2}
