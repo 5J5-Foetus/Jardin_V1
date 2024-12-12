@@ -90,6 +90,7 @@ public class weepingAngel : MonoBehaviour
                 statueAI.destination = destination;
                 // La statue peut se tourner et on lance la fonction qui permet la rotation
                 statueAI.updateRotation = true;
+
                 RotationJoueur();
             }
         }
