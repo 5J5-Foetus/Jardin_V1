@@ -13,9 +13,6 @@ public class yeuxStatue : MonoBehaviour
     /*----- Booleene ------*/
     bool detectionStatue;
 
-    /*----- Camera -----*/
-    public Camera CamJoueur; // La camera (du joueur)
-
 
     void Update()
     {
