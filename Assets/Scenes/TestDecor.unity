@@ -52607,7 +52607,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.0967e-41, y: 2.524355e-29, z: 0, w: -7.6858124e+29}
+  m_BoundingSphereOverride: {x: 1.8776958e+28, y: -5.11101e+33, z: 0, w: -8.695447e+29}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -76981,8 +76981,8 @@ MonoBehaviour:
   pedestalFoetus: {fileID: 1305206304}
   particulesFoetus: {fileID: 674065134}
   foetus: {fileID: 223808716}
-  marmite: {fileID: 0}
-  sacTerre: {fileID: 0}
+  marmite: {fileID: 225178720}
+  sacTerre: {fileID: 49749012}
   sonActivation: {fileID: 8300000, guid: b42b451ca1c1a5447845241ccd6b3468, type: 3}
 --- !u!95 &1305206310
 Animator:
